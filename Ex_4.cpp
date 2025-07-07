@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprimirIntersecao(int A[], int B[], int T) {
-    for (int i = 0; i < T; i++) {
-        for (int j = 0; j < T; j++) {
-            if (A[i] == B[j]) {
-                // Verifica se já foi impresso antes
+void imprimeIntersecao(int J[], int K[], int L) {
+    for (int i = 0; i < L; i++) {
+        for (int j = 0; j < L; j++) {
+            if (J[i] == K[j]) {
+                // Verifica se jÃ¡ foi impresso antes
                 int jaImpresso = 0;
-                for (int k = 0; k < i; k++) {
-                    if (A[k] == A[i]) {
+                for (int j = 0; j < i; j++) {
+                    if (K[j] == J[i]) {
                         jaImpresso = 1;
                         break;
                     }
                 }
                 if (!jaImpresso) {
-                    printf("%d ", A[i]);
+                    printf("%d ", J[i]);
                 }
                 break;
             }
@@ -24,34 +24,34 @@ void imprimirIntersecao(int A[], int B[], int T) {
 }
 
 int main() {
-    int T;
+    int Y;
 
     printf("Digite o tamanho dos vetores: ");
-    scanf("%d", &T);
+    scanf("%d", &Y);
 
-    int *A = malloc(T * sizeof(int));
-    int *B = malloc(T * sizeof(int));
+    int *B = malloc(Y * sizeof(int));
+    int *D = malloc(Y * sizeof(int));
 
-    if (A == NULL || B == NULL) {
-        printf("Erro ao alocar memória.\n");
+    if (B == NULL || D == NULL) {
+        printf("Erro ao alocar memÃ³ria.\n");
         return 1;
     }
 
     printf("Digite os elementos do vetor A:\n");
-    for (int i = 0; i < T; i++) {
-        scanf("%d", &A[i]);
+    for (int i = 0; i < Y; i++) {
+        scanf("%d", &J[i]);
     }
 
     printf("Digite os elementos do vetor B:\n");
-    for (int i = 0; i < T; i++) {
-        scanf("%d", &B[i]);
+    for (int i = 0; i < Y; i++) {
+        scanf("%d", &K[i]);
     }
 
     printf("Elementos em comum: ");
-    imprimirIntersecao(A, B, T);
+    imprimeIntersecao(B, D, Y);
 
-    free(A);
     free(B);
+    free(D);
 
     return 0;
 }
