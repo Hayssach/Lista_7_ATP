@@ -1,46 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void inverterArray(int *array, int tamanho) {
-    int *inicio = array;
-    int *fim = array + tamanho - 1;
+void inverteArray(int *a, int tam) {
+    int *i = a;
+    int *f = a + tam - 1;
 
-    while (inicio < fim) {
-        int temp = *inicio;
-        *inicio = *fim;
-        *fim = temp;
+    while (i < f) {
+        int temp = *i;
+        *i = *f;
+        *f = temp;
 
-        inicio++;
-        fim--;
+        i++;
+        f--;
     }
 }
 
 int main() {
-    int tamanho;
+    int TAM;
 
     printf("Digite o tamanho do array: ");
-    scanf("%d", &tamanho);
+    scanf("%d", &TAM);
 
-    int *vetor = malloc(tamanho * sizeof(int));
-    if (vetor == NULL) {
-        printf("Erro ao alocar memória.\n");
+    int *v = malloc(TAM * sizeof(int));
+    if (v == NULL) {
+        printf("Erro ao alocar memÃ³ria.\n");
         return 1;
     }
 
     printf("Digite os elementos do array:\n");
-    for (int i = 0; i < tamanho; i++) {
-        scanf("%d", &vetor[i]);
+    for (int i = 0; i < TAM; i++) {
+        scanf("%d", &v[i]);
     }
 
-    inverterArray(vetor, tamanho);
+    inverteArray(v, TAM);
 
     printf("Array invertido:\n");
-    for (int i = 0; i < tamanho; i++) {
-        printf("%d ", vetor[i]);
+    for (int i = 0; i < TAM; i++) {
+        printf("%d ", v[i]);
     }
     printf("\n");
 
-    free(vetor);
+    free(v);
 
     return 0;
 }
