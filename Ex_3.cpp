@@ -1,37 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Função que verifica se x está presente no vetor A
-int contemElemento(int A[], int T, int x) {
-    for (int i = 0; i < T; i++) {
-        if (A[i] == x) {
-            return 1; // Elemento encontrado
+//FunÃ§Ã£o que verifica se y estÃ¡ presente no vetor J
+int contarElemento(int J[], int A, int y) {
+    for (int i = 0; i < A; i++) {
+        if (J[i] == y) {
+            return 1;
         }
     }
-    return 0; // Elemento não encontrado
+    return 0; // Elemento nÃ£o encontrado
 }
 
 int main(){
-	int A[100], T, x;
+	int J[100], A, y;
 
     // Leitura do tamanho do vetor
-    printf("Digite o tamanho do vetor A: ");
-    scanf("%d", &T);
+    printf("Digite o tamanho do vetor J: ");
+    scanf("%d", &J);
 
     // Leitura dos elementos do vetor
-    printf("Digite os %d elementos do vetor A:\n", T);
-    for (int i = 0; i < T; i++) {
-        scanf("%d", &A[i]);
+    printf("Digite os %d elementos do vetor J:\n", A);
+    for (int i = 0; i < A; i++) {
+        scanf("%d", &J[i]);
     }
 
     // Leitura do elemento a ser buscado
     printf("Digite o elemento a ser buscado: ");
-    scanf("%d", &x);
+    scanf("%d", &y);
 
-    // Verifica se o elemento está presente
-    if (contemElemento(A, T, x)) {
-        printf("O elemento %d está presente no vetor.\n", x);
+    // Verifica se o elemento estÃ¡ presente
+    if (contarElemento(J, A, y)) {
+        printf("O elemento %d estÃ¡ presente no vetor.\n", y);
     } else {
-        printf("O elemento %d NÃO está presente no vetor.\n", x);
+        printf("O elemento %d NÃƒO estÃ¡ presente no vetor.\n", y);
     }
 }
