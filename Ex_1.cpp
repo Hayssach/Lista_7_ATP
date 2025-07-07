@@ -2,12 +2,11 @@
 #include <stdlib.h>
 
 int main(){
-	  char palavra[100];
+	  char p[100];
 
-    // Solicita a palavra ao usuário
     printf("Digite uma palavra: ");
-    scanf("%s", palavra);
+    scanf("%s", p);
 
-    // Imprime a primeira letra no formato pedido
-    printf("%s começa com %c\n", palavra, palavra[0]);
+    // Imprime a primeira letra
+    printf("%s comeÃ§a com %c\n", p, p[0]);
 }
